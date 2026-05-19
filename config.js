@@ -1,7 +1,7 @@
 const config = {
     webName: "NexaMarket",
     webUrl: "http://localhost:8080",
-    thumbnailUrl: "https://i.ibb.co.com/Xxq1Ykfx/IMG-20250225-WA0024.jpg",
+    thumbnailUrl: "https://ibb.co.com/RG04y8Cn",
     apiKey: "yo_sec_e7fef1e85ae890a18a6c4d153be3c850",
     
     descAppPrem: "App Premium adalah layanan aktivasi fitur penuh pada berbagai aplikasi populer seperti alat produktivitas, pemutar media, dan editor video tanpa batasan iklan.",
