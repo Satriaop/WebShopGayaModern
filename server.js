@@ -2563,8 +2563,6 @@ app.post('/api/user/order-jasa', (req, res) => {
     }
 });
 
-tambah ke server.js
-
 // Endpoint untuk menampilkan list jasa ke halaman User
 app.get('/api/user/list-jasa', (req, res) => {
     try {
