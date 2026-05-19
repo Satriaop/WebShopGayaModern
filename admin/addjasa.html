@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>tambah layanan jasa - admin panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;600;700;800&family=Fira+Code:wght=400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f1015; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="text-gray-200 min-h-screen w-full p-4 sm:p-6 select-none overflow-x-hidden">
+
+    <div class="w-full max-w-2xl mx-auto space-y-6 pb-24">
+        
+        <div class="flex items-center justify-between bg-[#14151f] border border-zinc-800/80 p-5 rounded-2xl shadow-xl">
+            <div class="flex items-center gap-3">
+                <a href="/admin/dashboard" class="w-9 h-9 rounded-xl bg-zinc-900/80 border border-zinc-800/60 flex items-center justify-center text-zinc-400 hover:text-white transition active:scale-95">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                </a>
+                <div>
+                    <h1 class="text-xs font-black tracking-wider text-red-500 uppercase">ADD LAYANAN JASA</h1>
+                    <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">publish jasa & layanan digital baru</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-screwdriver-wrench text-red-500 text-base"></i>
+        </div>
+
+        <form id="addJasaForm" class="bg-[#14151f] border border-zinc-800/80 p-5 sm:p-6 rounded-2xl shadow-xl space-y-5">
+            
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">nama layanan jasa :</label>
+                <div class="relative flex items-center">
+                    <i class="fa-solid fa-heading absolute left-4 text-zinc-600 text-xs"></i>
+                    <input type="text" id="namaJasa" placeholder="contoh: joki mythic romawi" class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl pl-11 pr-4 py-3.5 text-xs font-bold text-white placeholder-zinc-700 outline-none transition tracking-wide uppercase" required>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">kategori jasa :</label>
+                    <div class="relative flex items-center">
+                        <i class="fa-solid fa-layer-group absolute left-4 text-zinc-600 text-xs"></i>
+                        <select id="kategoriJasa" class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl pl-11 pr-4 py-3.5 text-xs font-bold text-white outline-none transition tracking-wider uppercase appearance-none" required>
+                            <option value="">-- pilih kategori --</option>
+                            <option value="JASA PUSH RANK">JASA PUSH RANK</option>
+                            <option value="JASA LAIN NYA">JASA LAIN NYA</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">harga mulai dari (rp) :</label>
+                    <div class="relative flex items-center">
+                        <i class="fa-solid fa-tag absolute left-4 text-zinc-600 text-xs"></i>
+                        <input type="number" id="hargaJasa" placeholder="contoh: 50000" min="0" class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl pl-11 pr-4 py-3.5 text-xs font-mono font-bold text-white placeholder-zinc-700 outline-none transition tracking-wider" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">estimasi pengerjaan (hari) :</label>
+                    <div class="relative flex items-center">
+                        <i class="fa-solid fa-clock absolute left-4 text-zinc-600 text-xs"></i>
+                        <input type="number" id="estimasiWaktu" placeholder="contoh: 3" min="1" class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl pl-11 pr-4 py-3.5 text-xs font-mono font-bold text-white placeholder-zinc-700 outline-none transition tracking-wider" required>
+                    </div>
+                </div>
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">link url banner / foto :</label>
+                    <div class="relative flex items-center">
+                        <i class="fa-solid fa-image absolute left-4 text-zinc-600 text-xs"></i>
+                        <input type="url" id="imageJasa" placeholder="https://link-gambar.com/foto.jpg" class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl pl-11 pr-4 py-3.5 text-xs font-mono font-medium text-white placeholder-zinc-700 outline-none transition tracking-wider" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-1.5">
+                <label class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider px-1 block">deskripsi & format order :</label>
+                <textarea id="deskripsiJasa" rows="5" placeholder="contoh: tuliskan id server dan email login untuk kami proses..." class="w-full bg-[#0f1015] border border-zinc-800/80 focus:border-red-500/30 rounded-xl px-4 py-3.5 text-xs font-medium text-zinc-300 placeholder-zinc-700 outline-none transition tracking-wide" required></textarea>
+            </div>
+
+            <div class="pt-2">
+                <button type="submit" id="btnSubmit" class="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-black text-xs tracking-widest rounded-xl transition uppercase shadow-lg shadow-red-600/10 active:scale-[0.99] flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-up text-xs"></i> <span>publish layanan jasa</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/user-session')
+                .then(res => res.json())
+                .then(session => {
+                    if (!session.valid || (session.user.role !== 'admin' && session.user.role !== 'owner')) {
+                        window.location.href = '/login';
+                    }
+                }).catch(() => { window.location.href = '/login'; });
+        });
+
+        document.getElementById('addJasaForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btnSubmit = document.getElementById('btnSubmit');
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>menyimpan data...</span>`;
+
+            const payloadData = {
+                jasaId: "JASA-" + Date.now(),
+                namaJasa: document.getElementById('namaJasa').value,
+                kategori: document.getElementById('kategoriJasa').value,
+                harga: document.getElementById('hargaJasa').value,
+                estimasiHari: document.getElementById('estimasiWaktu').value,
+                imageUrl: document.getElementById('imageJasa').value,
+                deskripsi: document.getElementById('deskripsiJasa').value
+            };
+
+            fetch('/api/admin/jasa/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payloadData)
+            })
+            .then(res => res.json())
+            .then(res => {
+                alert(res.message);
+                if(res.success) {
+                    document.getElementById('addJasaForm').reset();
+                }
+            })
+            .catch(() => alert('terjadi gangguan koneksi server.'))
+            .finally(() => {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = `<i class="fa-solid fa-cloud-arrow-up text-xs"></i> <span>publish layanan jasa</span>`;
+            });
+        });
+    </script>
+</body>
+</html>
