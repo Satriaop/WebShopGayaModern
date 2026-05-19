@@ -1,5 +1,5 @@
 const config = {
-    webName: "NexaMarket",
+    webName: "HexaMarket",
     webUrl: "http://localhost:8080",
     thumbnailUrl: "https://ibb.co.com/RG04y8Cn",
     apiKey: "yo_sec_d23b9392f3153385fa788c32a700487a",
